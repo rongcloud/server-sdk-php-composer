@@ -34,7 +34,7 @@ class Wordfilter{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -56,7 +56,7 @@ class Wordfilter{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -83,7 +83,7 @@ class Wordfilter{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 

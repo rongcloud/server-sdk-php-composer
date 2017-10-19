@@ -36,7 +36,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -68,7 +68,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -95,7 +95,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -132,7 +132,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -159,7 +159,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -186,7 +186,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -223,7 +223,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -250,7 +250,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -282,7 +282,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -319,7 +319,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -346,7 +346,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -378,7 +378,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -405,7 +405,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -432,7 +432,7 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -464,9 +464,82 @@ class Chatroom{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
+
+    /**
+     * 添加保活聊天室方法
+     *
+     * @param $chatroomId:id:要添加保活的聊天室的id；
+     * @return mixed
+     * @throws Exception
+     */
+    public function addKeepalive($chatroomId) {
+        try{
+            if (empty($chatroomId))
+                throw new Exception('Paramer "chatroomId" is required');
+
+
+            $params = array (
+                'chatroomId' => $chatroomId,
+            );
+
+            $ret = $this->SendRequest->curl('/chatroom/keepalive/add.json',$params,'urlencoded','im','POST');
+            if(empty($ret))
+                throw new Exception('bad request');
+            return $ret;
+
+        }catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    /**
+     * 移除保活聊天室方法
+     *
+     * @param $chatroomId:id:要移除保活的聊天室的id；
+     * @return mixed
+     * @throws Exception
+     */
+    public function removeKeepalive($chatroomId) {
+        try{
+            if (empty($chatroomId))
+                throw new Exception('Paramer "chatroomId" is required');
+
+
+            $params = array (
+                'chatroomId' => $chatroomId,
+            );
+
+            $ret = $this->SendRequest->curl('/chatroom/keepalive/remove.json',$params,'urlencoded','im','POST');
+            if(empty($ret))
+                throw new Exception('bad request');
+            return $ret;
+
+        }catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    /**
+     * 查询保活聊天室信息方法
+     *
+     * @return mixed
+     * @throws Exception
+     */
+    public function queryKeepalive() {
+        try{
+            $params = array ();
+            $ret = $this->SendRequest->curl('/chatroom/keepalive/query.json',$params,'urlencoded','im','POST');
+            if(empty($ret))
+                throw new Exception('bad request');
+            return $ret;
+
+        }catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
 
 }
 ?>

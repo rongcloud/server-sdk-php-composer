@@ -62,7 +62,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -87,7 +87,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -136,7 +136,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -161,7 +161,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -212,7 +212,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -263,7 +263,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -304,7 +304,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -346,7 +346,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -373,7 +373,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -400,7 +400,7 @@ class Message{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 

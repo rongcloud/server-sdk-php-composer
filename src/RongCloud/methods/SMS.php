@@ -34,7 +34,7 @@ class SMS{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -75,7 +75,7 @@ class SMS{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
@@ -107,7 +107,7 @@ class SMS{
     		return $ret;
 
     	}catch (Exception $e) {
-    		print_r($e->getMessage());
+    		throw new Exception($e->getMessage());
     	}
    }
 
