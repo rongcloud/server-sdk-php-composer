@@ -1,9 +1,5 @@
 # server-sdk-php-composer
 Rong Cloud Server SDK in PHP for Composer. 
- 
-在该基础上进行少量修改：  
-1.错误处理全部修改为throw new Exception 调用者自己捕获处理  
-2.新增聊天室保活服务  
 
 
 ## 安装
