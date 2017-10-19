@@ -1,15 +1,14 @@
 {
-    "name": "rongcloud/php-sdk",
-    "description": "Rong Cloud Server SDK in PHP.",
+    "name": "liaosy21/rongcloud-php-sdk",
+    "description": "基于融云服务端SDK，做了一些更新.",
     "keywords": ["rongcloud", "rong cloud", "rlcoud", "sdk"],
-    "homepage": "http://rong.io",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Rong Cloud",
-            "email": "support@rongcloud.cn",
-            "homepage": "https://github.com/rongcloud/"
+            "name": "liaosy21",
+            "email": "liaosy21@gmail.com",
+            "homepage": "https://github.com/liaosy21"
         }
     ],
     "require": {
