@@ -1,22 +1,15 @@
-# server-sdk-php-composer
-Rong Cloud Server SDK in PHP for Composer.
+server-sdk-php
+=================
 
-## 安装
+Rong Cloud Server SDK in PHP.
 
-* 推荐通过 composer 安装，使用 composer.json 声明依赖，或者运行下面的命令：
+# 版本说明
+为方便开发者的接入使用，更好的对融云 Server SDK 进行维护管理，融云 Server SDK 3.0 统一规范了命名及调用方式，结构更加清晰。老版本的 Server SDK 仍然可以使用，但不会再做新的功能更新。
+如果您是新接入的开发者，建议您使用 Server SDK 3.0 版本。 对已集成使用老版本 Server SDK 的开发者，不能直接升级使用，强烈建议您重新测试后使用
+# API文档
+- 官方文档(https://www.rongcloud.cn/docs/server_sdk_api/)
 
-```bash
-$ composer require rongcloud/php-sdk
-```
-
-* 直接下载安装，SDK 没有依赖其他第三方库，可直接下载引入使用。
+# 使用教程
+* 请参考 example 上面提供了所有的 API 接口的调用用例。
 
 
-## 联系我们
-- 如果希望帮助，请提交[工单](http://developer.rongcloud.cn/ticket), 或者 mailto:support.rongcloud.cn
-- 如果发现了bug， 欢迎提交 [issue](https://github.com/rongcloud/server-sdk-php-composer)
-- 如果要提交代码，欢迎提交 pull request
-
-## 代码许可
-
-The MIT License (MIT).详情见 [License文件](https://github.com/qiniu/php-sdk/blob/master/LICENSE).
