@@ -239,7 +239,11 @@ class Utils
         $proto = $params['proto'];
         $verify = $params['verify'][$proto]['require'];
         $errors = $params['response'];
-        $isIllegal = empty($params['val'])?1:0;
+        if (is_array($params['val'])) {
+            $isIllegal = empty($params['val']) ? 1 : 0;
+        } else {
+            $isIllegal = trim($params['val']) == '' ? 1 : 0;
+        }
         if($isIllegal){
             $error = $this->getError([
                             'code'=>$verify['invalid'],
