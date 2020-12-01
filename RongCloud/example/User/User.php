@@ -15,6 +15,8 @@ use RongCloud\Lib\Utils;
  * 用户注册
  */
 function register() {
+    //连接新加坡数据中心
+    //RongCloud::$apiUrl = ['http://api-sg01.ronghub.com/'];
     $RongSDK = new RongCloud(APPKEY, APPSECRET);
     $user = [
         'id' => 'ujadk90had',
