@@ -32,13 +32,6 @@
         "invalid": "1005"
       }
     },
-    "portrait": {
-      "length": {
-        "max": 512,
-        "min": 0,
-        "invalid": "1005"
-      }
-    },
     "minute": {
       "require": {
         "must": true,
