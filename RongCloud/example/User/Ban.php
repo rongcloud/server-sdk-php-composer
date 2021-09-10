@@ -6,8 +6,8 @@
 
 
 require "./../../RongCloud.php";
-define("APPKEY", 'c9kqb3rdkbb8j');
-define('APPSECRET', 'uTNrkYskbNC');
+define("APPKEY", '');
+define('APPSECRET', '');
 
 use RongCloud\RongCloud;
 use RongCloud\Lib\Utils;
@@ -17,7 +17,7 @@ use RongCloud\Lib\Utils;
  */
 function set()
 {
-    $RongSDK = new RongCloud(APPKEY, APPSECRET,'http://apiqa.cn.ronghub.com/');
+    $RongSDK = new RongCloud(APPKEY, APPSECRET);
     $user = [
         'id' => ['kkj9o01', 'kkj9o02'],  //被禁言用户 Id，支持批量设置，最多不超过 1000 个。
         'state' => 1,                    //禁言状态，0 解除禁言、1 添加禁言
@@ -33,7 +33,7 @@ set();
  */
 function getList()
 {
-    $RongSDK = new RongCloud(APPKEY, APPSECRET,'http://apiqa.cn.ronghub.com/');
+    $RongSDK = new RongCloud(APPKEY, APPSECRET);
     $param = [
         'num'       => 101,     //获取行数，默认为 100，最大支持 200 个。
         'offset'    => 0,       //查询开始位置，默认为 0。
