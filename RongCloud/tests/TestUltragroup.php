@@ -68,6 +68,14 @@ function testGroup($RongSDK){
     Utils::dump("解散超级群成功",$Group->dismiss($params));
 
     Utils::dump("解散超级群 id 错误",$Group->dismiss());
+    $params = [
+        'id'=> 'watergroup',//超级群 id
+        'member'=>"userId1"//成员id
+    ];
+
+    Utils::dump("超级群成员是否存在成功",$Group->isExist($params));
+
+    Utils::dump("超级群成员是否存在 id 错误",$Group->isExist());
 
 
 
