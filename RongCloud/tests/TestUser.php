@@ -391,3 +391,34 @@ function testUserRemark($RongSDK)
 }
 
 testUserRemark($RongSDK);
+
+
+
+function testUserAbandon($RongSDK)
+{
+    $User = $RongSDK->getUser();
+    $params = [
+        'id' => 'kkj9o01',
+    ];
+    Utils::dump("注销用户", $User->abandon($params));
+    $params = [
+    ];
+    Utils::dump("注销用户 id 错误", $User->abandon($params));
+
+    $params = [
+        'id' => 'kkj9o01',
+    ];
+    Utils::dump("注销用户激活", $User->activate($params));
+    $params = [
+    ];
+    Utils::dump("注销用户激活 id 错误", $User->activate($params));
+
+
+    $params = [
+        'size'=>50,
+        'page'=>1
+    ];
+    Utils::dump("注销用户列表", $User->abandonQuery($params));
+}
+
+testUserAbandon($RongSDK);

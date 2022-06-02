@@ -64,6 +64,52 @@ function get()
 get();
 
 /**
+ * 用户注销
+ */
+function abandon()
+{
+    $RongSDK = new RongCloud(APPKEY, APPSECRET);
+    $user = [
+        'id' => 'ujadk90ha', //用户id
+    ];
+    $res = $RongSDK->getUser()->abandon($user);
+    Utils::dump("用户注销", $res);
+}
+
+abandon();
+
+/**
+ * 注销用户列表
+ */
+function abandonQuery()
+{
+    $RongSDK = new RongCloud(APPKEY, APPSECRET);
+    $params = [
+        'page' => 1, //页码
+        'size' => 10, //分页条数
+    ];
+    $res = $RongSDK->getUser()->abandonQuery($params);
+    Utils::dump("注销用户列表", $res);
+}
+
+abandonQuery();
+
+/**
+ * 注销激活
+ */
+function active()
+{
+    $RongSDK = new RongCloud(APPKEY, APPSECRET);
+    $user = [
+        'id' => 'ujadk90ha', //用户id
+    ];
+    $res = $RongSDK->getUser()->activate($user);
+    Utils::dump("注销用户激活", $res);
+}
+
+active();
+
+/**
  * 查询用户所在群组
  */
 function getGroups()
