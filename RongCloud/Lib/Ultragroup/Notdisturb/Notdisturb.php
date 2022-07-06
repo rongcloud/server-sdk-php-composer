@@ -1,20 +1,19 @@
 <?php
-/**
- * 指定群组全部成员禁言
- * @author hejinyu
- */
-namespace RongCloud\Lib\Group\MuteAllMembers;
+namespace RongCloud\Lib\Ultragroup\Notdisturb;
 
 use RongCloud\Lib\Request;
 use RongCloud\Lib\Utils;
-class MuteAllMembers
-{
+
+/**
+ * 超级群免打扰
+ */
+class Notdisturb {
     /**
-     * 群组模块路径
+     * 超级群模块路径
      *
      * @var string
      */
-    private $jsonPath = 'Lib/Group/MuteAllMembers/';
+    private $jsonPath = 'Lib/Ultragroup/Notdisturb/';
 
     /**
      * 请求配置文件
@@ -40,19 +39,29 @@ class MuteAllMembers
     }
 
     /**
-     * 添加群组禁言
+     * 设置超级群免打扰
      *
-     * @param $Group array 添加群组禁言 参数
+     * @param $Group array 添加超级群禁言 参数
      * @param
      * $Group = [
-                'id'=> 'ujadk90ha',//群组 id
-         ];
+            'id'=> 'ujadk90ha',//超级群 id
+            'busChannel'=> 'busid',//频道 id  可以为空
+            'unpushLevel'=> -1,//超级群 免打扰级别
+ *                           -1：全部消息通知
+                            0：未设置（用户未设置时为此状态，为全部消息都通知，在此状态下，如设置了超级群默认状态以超级群的默认设置为准）
+                            1：仅针对 @ 消息进行通知，包括 @指定用户 和 @所有人
+                            2：仅针对 @ 指定用户消息进行通知，且仅通知被 @ 的指定的用户进行通知。
+                            如：@张三 则张三可以收到推送，@所有人 时不会收到推送。
+
+                            4：仅针对 @群全员进行通知，只接收 @所有人 的推送信息
+                            5：不接收通知，即使为 @ 消息也不推送通知。
+    ];
      * @return array
      */
-    public function add(array $Group=[]){
+    public function set(array $Group=[]){
         $conf = $this->conf['add'];
         $verify = $this->verify['group'];
-        $verify = ['id'=>$verify['id'], 'members'=>$verify['members']];
+        $verify = ['id'=>$verify['id']];
         $error = (new Utils())->check([
             'api'=> $conf,
             'model'=> 'group',
@@ -69,49 +78,18 @@ class MuteAllMembers
     }
 
     /**
-     * 解除禁言
+     * 查询超级群/频道免打扰状态
      *
-     * @param $Group array 解除禁言 参数
+     * @param $Group array 超级群 参数
      * @param
      * $Group = [
-                'id'=> 'ujadk90ha',//群组 id
-                'members'=>[ //解除禁言人员列表
-                    ['id'=> 'ujadk90ha']
-                ]
-            ];
+            'id'=> 'ujadk90ha',//超级群 id
+            'busChannel'=> 'busid',//频道 id  可以为空
+    ];
      * @return array
      */
-    public function remove(array $Group=[]){
-        $conf = $this->conf['remove'];
-        $verify = $this->verify['group'];
-        $verify = ['id'=>$verify['id'], 'members'=>$verify['members']];
-        $error = (new Utils())->check([
-            'api'=> $conf,
-            'model'=> 'group',
-            'data'=> $Group,
-            'verify'=> $verify
-        ]);
-        if($error) return $error;
-        $Group = (new Utils())->rename($Group, [
-            'id'=> 'groupId',
-        ]);
-        $result = (new Request())->Request($conf['url'],$Group);
-        $result = (new Utils())->responseError($result, $conf['response']['fail']);
-        return $result;
-    }
-
-    /**
-     * 查询禁言成员列表
-     *
-     * @param $Group array 解除禁言 参数
-     * @param
-     * $Group = [
-            'id'=> 'ujadk90ha',//群组 id
-         ];
-     * @return array
-     */
-    public function getList(array $Group=[]){
-        $conf = $this->conf['getList'];
+    public function get(array $Group=[]){
+        $conf = $this->conf['get'];
         $verify = $this->verify['group'];
         $verify = ['id'=>$verify['id']];
         $error = (new Utils())->check([
