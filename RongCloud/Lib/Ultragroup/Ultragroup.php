@@ -10,7 +10,6 @@ use RongCloud\Lib\Ultragroup\MuteAllMembers\MuteAllMembers;
 use RongCloud\Lib\Ultragroup\MuteWhiteList\MuteWhiteList;
 use RongCloud\Lib\Ultragroup\Expansion\Expansion;
 use RongCloud\Lib\Ultragroup\BusChannel\BusChannel;
-use RongCloud\Lib\Ultragroup\Notdisturb\Notdisturb;
 use RongCloud\Lib\Request;
 use RongCloud\Lib\Utils;
 class Ultragroup
@@ -278,15 +277,6 @@ class Ultragroup
      */
     public function BusChannel(){
         return new BusChannel();
-    }
-
-    /**
-     * 超级群扩免打扰
-     *
-     * @return Notdisturb
-     */
-    public function Notdisturb(){
-        return new Notdisturb();
     }
 
 
