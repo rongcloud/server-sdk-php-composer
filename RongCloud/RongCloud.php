@@ -19,6 +19,11 @@ if (!defined('RONGCLOUOD_ROOT')) {
     require('Autoloader.php');
 }
 
+//是否启用域名切换 true 开启（默认）  false 则关闭
+if (!defined('RONGCLOUOD_DOMAIN_CHANGE')) {
+    define('RONGCLOUOD_DOMAIN_CHANGE', true);
+}
+
 class RongCloud
 {
     /**
@@ -126,6 +131,7 @@ class RongCloud
             self::$appSecret = $appSecret;
         }
         if($apiUrl) self::$apiUrl = $apiUrl;
+
         //创建 User
         $this->_user = new User();
 

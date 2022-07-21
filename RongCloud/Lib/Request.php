@@ -56,6 +56,9 @@ class Request
         if (is_string(RongCloud::$apiUrl)) {
             return RongCloud::$apiUrl;
         }
+        if(RONGCLOUOD_DOMAIN_CHANGE != true){
+            return RongCloud::$apiUrl[0];
+        }
         $seesionId = "RongCloudServerSDKUrl";
         if (!session_id()) {
             @session_start();
@@ -167,7 +170,7 @@ class Request
         curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
         curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
-        curl_setopt($ch, CURLOPT_USERAGENT, "rc-php-sdk/3.1.5.02.dev");
+        curl_setopt($ch, CURLOPT_USERAGENT, "rc-php-sdk/3.1.7");
         //        curl_setopt($ch, CURLOPT_DNS_USE_GLOBAL_CACHE, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $ret = curl_exec($ch);
