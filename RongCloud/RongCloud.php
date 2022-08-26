@@ -131,7 +131,6 @@ class RongCloud
             self::$appSecret = $appSecret;
         }
         if($apiUrl) self::$apiUrl = $apiUrl;
-
         //创建 User
         $this->_user = new User();
 
