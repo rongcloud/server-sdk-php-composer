@@ -18,9 +18,13 @@ Server SDK 功能支持的版本清单
 | [用户封禁](./RongCloud/Lib/User/Block/Block.php) | block.add |添加用户封禁 | 3.0.1 |
 |  | block.getList| 获取用户封禁列表| 3.0.1 |
 |  | block.remove| 移除用户封禁| 3.0.1 |
-| [用户标签](./RongCloud/Lib/User/Tag/Tag.php) | tag.set | 添加用户标签 |  |
+| [用户标签](./RongCloud/Lib/User/Tag/Tag.php) | tag.set | 添加用户标签 | 3.0.4 |
 |  | tag.batchset | 批量添加用户标签 | 3.0.4 |
 |  | tag.get | 获取用户标签 | 3.0.4 |
+| [用户托管](./RongCloud/Lib/User/Profile/Profile.php) | profile.set | 用户资料设置 | 3.2.7 |
+|  | profile.clean | 用户托管信息清除 | 3.2.7 |
+|  | profile.batchQuery | 批量查询用户资料 | 3.2.7 |
+|  | profile.query | 分页获取应用全部用户列表 | 3.2.7 |
 | [用户全局群禁言](./RongCloud/Lib/User/MuteGroups/MuteGroups.php) | muteGroups.add | 添加全局群组禁言用户，添加后用户在应用下的所有群组中都不能发送消息 | 3.0.2 |
 |  | muteGroups.remove | 移除全局群组禁言用户 | 3.0.2 |
 |  | muteGroups.getList | 获取全局群组禁言用户列表 | 3.0.2 |
@@ -70,6 +74,29 @@ Server SDK 功能支持的版本清单
 | [用户指定群全部禁言](./RongCloud/Lib/group/MuteAllmembers/MuteAllmembers.php) | gag.add | 添加指定群组全部禁言| 3.0.3 |
 |  | muteAllmembers.remove | 移除指定群组全部禁言 | 3.0.3 |
 |  | muteAllmembers.getList | 获取指定群组全部禁言列表 | 3.0.3 |
+| [群组信息托管](./RongCloud/Lib/Entrust/Entrust.php) | Group.create | 创建群组| 3.2.8 |
+|  | Group.update | 设置群组资料 | 3.2.8 |
+|  | Group.quit | 退出群组 | 3.2.8 |
+|  | Group.dismiss | 解散群组 | 3.2.8 |
+|  | Group.join | 加入群组 | 3.2.8 |
+|  | Group.transferOwner | 转让群组 | 3.2.8 |
+|  | Group.import | 群组托管导入 | 3.2.8 |
+|  | Group.query | 分页查询应用下群组信息 | 3.2.8 |
+|  | Group.joinedQuery | 分页查询用户加入的群组 | 3.2.8 |
+|  | Group.profileQuery | 批量查询群组资料 | 3.2.8 |
+|  | GroupManager.add | 设置群管理员(添加群管理员) | 3.2.8 |
+|  | GroupManager.remove | 移除群管理员 | 3.2.8 |
+|  | GroupMember.set | 设置群成员资料 | 3.2.8 |
+|  | GroupMember.kick | 踢出群组 | 3.2.8 |
+|  | GroupMember.kickAll | 指定用户踢出所有群组 | 3.2.8 |
+|  | GroupMember.follow | 设置用户指定群特别关注用户 | 3.2.8 |
+|  | GroupMember.unFollow | 删除用户指定群组中的特别关注用户 | 3.2.8 |
+|  | GroupMember.getFollowed | 查询用户指定群组特别关注成员列表 | 3.2.8 |
+|  | GroupMember.query | 分页获取群成员信息 | 3.2.8 |
+|  | GroupMember.specificQuery | 获取指定群成员信息 | 3.2.8 |
+|  | GroupRemarkName.set | 设置用户指定群组名称备注名 | 3.2.8 |
+|  | GroupRemarkName.delete | 删除用户指定群组名称备注名 | 3.2.8 |
+|  | GroupRemarkName.query | 查询用户指定群组名称备注名 | 3.2.8 |
 | [会话免打扰(Conversation)](./RongCloud/Lib/Conversation/Conversation.php) | mute | 添加免打扰会话 | 3.0.1 |
 |  | unMute | 移除免打扰会话 | 3.0.1 |
 |  | get | 免打扰会话状态获取 | 3.0.1 |
